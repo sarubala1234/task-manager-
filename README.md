@@ -1,6 +1,11 @@
 # Task Manager  
-click here see the  Task Manager app
-https://3hxsbfsl-8000.inc1.devtunnels.ms/
+
+🌐 Live Demo
+
+You can view and interact with the live version of the application here:
+
+[Open Live App](https://3hxsbfsl-8000.inc1.devtunnels.ms/)
+
 A Django-based task manager application with CRUD operations.
 
 ## Features
