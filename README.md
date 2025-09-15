@@ -1,5 +1,6 @@
-# Task Manager
-
+# Task Manager  
+click here see the  Task Manager app
+(http://127.0.0.1:8000/)
 A Django-based task manager application with CRUD operations.
 
 ## Features
@@ -18,5 +19,5 @@ A Django-based task manager application with CRUD operations.
 
 ## Usage
 
-- Access at http://127.0.0.1:8000
+- Access the application at http://127.0.0.1:8000/ to see the output
 - Add tasks, mark as completed, edit, or delete
