@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Task List{% endblock %}
+
+{% block content %}
+<h1 class="mb-4 text-center">Tasks</h1>
+<div class="d-flex justify-content-center align-items-center" style="min-height: 70vh;">
+    <div class="row row-cols-1 row-cols-md-2 g-4 w-100" style="max-width: 900px;">
+        {% for task in tasks %}
+        <div class="col d-flex justify-content-center">
+            <div class="card glass shadow-3d h-100" style="width: 100%; max-width: 400px; perspective: 1000px;">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-size: 1.5rem;">{{ task.title }}</h5>
+                    <p class="card-text" style="font-size: 1.1rem;">{{ task.description|linebreaksbr }}</p>
+                    <p class="card-text">
+                        <small class="text-muted">Created: {{ task.created_at|date:"M d, Y H:i" }}</small>
+                    </p>
+                    <p>
+                        {% if task.completed %}
+                        <span class="badge bg-success">Completed</span>
+                        {% else %}
+                        <span class="badge bg-warning text-dark">Pending</span>
+                        {% endif %}
+                    </p>
+                    <a href="{% url 'task_detail' task.pk %}" class="btn btn-primary btn-sm">View</a>
+                    <a href="{% url 'task_update' task.pk %}" class="btn btn-secondary btn-sm">Edit</a>
+                    <a href="{% url 'task_delete' task.pk %}" class="btn btn-danger btn-sm">Delete</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>No tasks available. <a href="{% url 'task_create' %}">Create one</a>.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
